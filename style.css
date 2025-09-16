@@ -1,0 +1,129 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background: #a5cff8;
+  font-family: sans-serif;
+}
+
+h1 {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* --- Bolo --- */
+.cake {
+  background: #f4f3f1;
+  border-radius: 10px;
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  bottom: 200px;
+  left: calc(50% - 75px);
+  animation: drop 800ms ease-out forwards;
+}
+
+.cake:after,
+.cake:before {
+  background: #6b86ff;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  left: 0;
+}
+
+.cake:before {
+  top: 15px;
+}
+
+.cake:after {
+  top: 35px;
+}
+@keyframes drop {
+  from {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- Prato --- */
+.plate {
+  width: 200px;
+  height: 15px;
+  background: #394f9f;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 180px;
+  left: calc(50% - 100px);
+}
+
+.msg {
+  margin-top: 100px;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* --- Velas --- */
+.candle {
+  width: 10px;
+  height: 30px;
+  background: #6b86ff;
+  position: absolute;
+  bottom: 60px;
+  border-radius: 2px;
+}
+
+.candle:nth-child(1) { left: 35px; }
+.candle:nth-child(2) { left: 70px; }
+.candle:nth-child(3) { left: 105px; }
+
+/* --- Chamas --- */
+.flame {
+  width: 10px;
+  height: 15px;
+  background: #ffdd59;
+  border-radius: 50% 50% 50% 50%;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+  from {
+    transform: scale(1) translateY(0);
+    background: #ffe066;
+  }
+  to {
+    transform: scale(1.2) translateY(-2px);
+    background: #ffd32a;
+  }
+}
+
+/* --- Botão --- */
+#toggleBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #706bff;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+}
+
+#toggleBtn:hover {
+  background: #7876e0;
+}
